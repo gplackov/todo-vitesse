@@ -14,8 +14,10 @@ const newTodo = ref('')
 //     router.push(`/hi/${encodeURIComponent(name.value)}`)
 // }
 const addTodo = () => {
-  todo.addTodo(newTodo.value)
-  newTodo.value = ''
+  if (newTodo.value !== '') {
+    todo.addTodo(newTodo.value)
+    newTodo.value = ''
+  }
 }
 
 const { t } = useI18n()
